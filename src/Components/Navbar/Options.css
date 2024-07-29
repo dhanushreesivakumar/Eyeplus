@@ -1,12 +1,10 @@
 .nav {
-  background-color: white; /* Ensures the navbar has a white background */
+  background-color: white;
   display: flex;
   padding: 10px 0;
   margin-bottom: 300px;
   align-items: center;
-  margin-left: 250px;
-  margin-top: 80px;
-  
+  margin-left: 150px;
   
 }
 
@@ -21,54 +19,27 @@
 .nav-item {
   position: relative;
   padding: 10px 15px;
- 
-}
-
-.nav-item > ul {
-  margin: 0;
-  padding: 0;
 }
 
 .nav-link {
   text-decoration: none;
   color: black;
   font-size: 15px;
-  font-weight:lighter;
-
+  font-weight: lighter;
+  transition: color 0.3s ease;
 }
 
-.nav-item:hover .nav-link {
-  color: blue; /* Change color on hover for the main item */
+.nav-link:hover {
+  color: blue;
 }
 
-.dropdown {
-  display: none; /* Initially hides the dropdown */
-  position: absolute;
-  top: 100%; /* Positions the dropdown below the nav item */
-  left: 0;
-  background-color: rgb(3, 9, 12);
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  border: 1px solid #0c2776;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown li {
-  padding: 10px 15px;
-  white-space: nowrap; /* Prevents text from wrapping */
-}
-
-.dropdown li:hover {
-  background-color: #1176e1; /* Background color change on hover */
+.nav-link:visited {
+  color: black; /* Ensures the color stays black even after being visited */
 }
 
 .page-content {
-  
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   background-color: rgb(12, 1, 1);
-  
 }
-

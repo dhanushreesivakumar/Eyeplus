@@ -9,6 +9,7 @@ import OnlineEyetest from './Onlineeyetest'
 import Premiunmwear from './Premiumwear'
 import Glam from './Glamlenses'
 import Ourbrand from './OurBrands'
+import Footer from '../Footer/Footer'
 
 export default function Home() {
   return (
@@ -45,6 +46,9 @@ export default function Home() {
     
      </div>
      <Ourbrand></Ourbrand>
+     <div>
+    <Footer></Footer>
+    </div>
       </div>
       
     

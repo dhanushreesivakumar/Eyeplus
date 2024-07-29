@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../Assests/Logo.png';
+import logo from '../Assests/LogoPic.png';
 import './Login.css';
+
 
 
 function Login() {
@@ -20,7 +21,7 @@ function Login() {
   const validateEmail = (email) => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
     if (!regex.test(email)) {
-      setEmailError('Email must be a valid address and end with .com or .in.');
+      setEmailError('Email is not valid');
     } else {
       setEmailError('');
     }
@@ -36,7 +37,7 @@ function Login() {
     const regex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[\W_])[A-Za-z\d\W_]{8,}$/;
     if (!regex.test(password)) {
       setPasswordError(
-        'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.'
+        'Not a strong password.'
       );
     } else {
       setPasswordError('');
@@ -63,8 +64,8 @@ function Login() {
     <div className='login1_container'>
     <div className="login-container">
       <div>
-      
-        <h2>Login to Eye<span>+</span> </h2>
+      <img src={logo} className='app-logo'></img>
+        <h2 style={{fontSize:'100%'}}>Login to Eye<span>+</span> </h2>
       </div>
       <br></br>
       <br></br>
@@ -96,7 +97,7 @@ function Login() {
           <a href="/forgot-password">Forgot Password?</a>
         </div>
         <br />
-        <button type="submit" className='button' disabled={!isFormValid}><Link to="/home">Login</Link></button>
+        <button type="submit" className='button1' disabled={!isFormValid}><Link to="/Home">Login</Link></button>
         <br/>
         <div className="no-account">
           <Link to="/register">Don't have an account? Signup</Link>

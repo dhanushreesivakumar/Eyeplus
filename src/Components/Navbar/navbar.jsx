@@ -2,22 +2,16 @@ import React from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faShoppingCart, faSearch,faLocation,faPhone} from '@fortawesome/free-solid-svg-icons';
-import logo from '../Assests/Logo.png';
-import Login from '../loginup/Login';
-
-
-
+import { faHeart, faShoppingCart, faSearch, faLocation, faPhone } from '@fortawesome/free-solid-svg-icons';
+import logo from '../Assests/LogoPic.png';
 
 function Navbar() {
   return (
-    
-    <nav className="navbar" style={{backgroundColor:'white', position:'fixed'}}>
+    <nav className="navbar">
       <div className="navbar-left">
         <div className="logo">
-          <img src={logo} alt="Logo" className="logo-img" /> 
+          <img src={logo} alt="Logo" className="logo-img" />
         </div>
-        <div><FontAwesomeIcon icon={faPhone}/></div><a href=" tel:+7598894445"> Contact: +123-456-7890</a> 
       </div>
       <div className="navbar-center">
         <div className="search-container">
@@ -26,24 +20,21 @@ function Navbar() {
         </div>
       </div>
       <div className="navbar-right">
-        <FontAwesomeIcon icon={faLocation}></FontAwesomeIcon>
-        <a href="#trackorder" className="nav-link"><Link to="/Product">Track Order</Link></a>
-        <a href="#signin" className="nav-link"><Link to="/">Sign In</Link></a>
-        <a href="#signup" className="nav-link"><Link to="/register">Sign Up</Link></a>
-        <a href="#wishlist" className="nav-link">
+        <FontAwesomeIcon icon={faLocation} />
+        <Link to="/Contact" className="nav-link">Track Order</Link>
+        <Link to="/" className="nav-link">Sign In</Link>
+        <Link to="/register" className="nav-link">Sign Up</Link>
+        <Link to="/wishlist" className="nav-link">
           <FontAwesomeIcon icon={faHeart} className="nav-icon" />
-          <span className="nav-text">Wishlist</span>
-        </a>
-        <a href="#cart" className="nav-link">
+          <span className="nav-text" style={{color:'black'}}>Wishlist</span>
+        </Link>
+        <Link to="/cart" className="nav-link">
           <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-          <span className="nav-text">Add to Cart</span>
-        </a>
+          <span className="nav-text" style={{color:'black'}}>Add to Cart</span>
+        </Link>
       </div>
     </nav>
   );
 }
 
 export default Navbar;
-
-
-
