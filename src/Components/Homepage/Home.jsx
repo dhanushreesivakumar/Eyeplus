@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <div>
       
-      <Navbar></Navbar>
-     <Options></Options>
+      <Navbar></Navbar><br></br><br></br>
      <ImageCarousel></ImageCarousel>
+     <Options></Options>
      <div className='eyetest'>
      <h3>EYE TEST AT HOME</h3>
     

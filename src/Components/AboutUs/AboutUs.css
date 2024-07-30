@@ -1,0 +1,73 @@
+.about-us {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: url('../Assests/imagee.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.vision, .focus, .features, .for-everyone {
+    background: rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.vision h1, .focus h2, .for-everyone h2 {
+    text-align: center;
+    color: #333;
+}
+
+.vision p, .focus p, .for-everyone p {
+    text-align: center;
+    color: #666;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.feature {
+    width: 45%;
+    margin: 10px;
+    text-align: center;
+}
+
+.feature img {
+    max-width: 80%;  /* Reduced size */
+    border-radius: 10px;
+}
+
+.feature h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.feature p {
+    color: #666;
+}
+
+.for-everyone .segments {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.segment {
+    text-align: center;
+}
+
+.segment img {
+    width: 100px;   /* Reduced size */
+    height: 100px;  /* Reduced size */
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.segment p {
+    color: #333;
+    font-weight: bold;
+}

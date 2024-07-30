@@ -6,6 +6,7 @@ import './style.css';
 import Navbar from '../Navbar/navbar';
 
 const MainComponent = () => {
+  
   const [filters, setFilters] = useState({
     brand: '',
     category: '',
@@ -60,6 +61,7 @@ const MainComponent = () => {
 
   return (
     <div className="main-container">
+      <Navbar></Navbar>
       <FilterComponent filters={filters} setFilters={setFilters} />
       <ProductGrid products={filteredProducts} addToCart={addToCart} />
     </div>

@@ -13,11 +13,11 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
   {
     imgPath:
-      'https://d3995ea24pmi7m.cloudfront.net/fit-in/1450x400/media/wysiwyg/Sugnature_Web-banner_1400X400.jpg',
+      'https://static1.lenskart.com/media/desktop/img/2024/jun/eyetest/Turban-DesktopBanner.jpg',
   },
   {
     imgPath:
-      'https://d3995ea24pmi7m.cloudfront.net/fit-in/1450x400/media/wysiwyg/Fastrack-1400x400_Banners.jpg',
+      'https://static1.lenskart.com/media/desktop/img/harmony/28-jun-24/Web%20Banner%201920x520.jpg',
   },
   {
     imgPath:
@@ -47,7 +47,7 @@ function ImageCarousel() {
   };
 
   return (
-    <Box sx={{ maxWidth: '100%', flexGrow: 1,marginTop:'-10px'}}>
+    <Box sx={{ maxWidth: '100%', flexGrow: 1,marginTop:'17px'}}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}

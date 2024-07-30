@@ -460,7 +460,7 @@ export const products = [
       name: 'Oakley Crosslink Zero Eyeglasses',
       description: 'For Men, Size: Large',
       price: 5200,
-      image: 'path_to_image_20.jpg',
+      image: 'https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/i/grey-transparent-grey-full-rim-wayfarer-john-jacobs-rich-acetate-jj-e11727--c6-eyeglasses_img_7072_24_02_2024.jpg',
       brand: 'Oakley',
       category: 'Full Rim',
       color: 'Black',

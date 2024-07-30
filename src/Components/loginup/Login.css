@@ -1,185 +1,57 @@
-.login-container {
-    max-width: 400px;
-    
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color:rgb(249, 226, 216);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-   
-    margin-right: 2px;
-    height: 100vh;
-    margin-left: 930px;
-   
-    
-    
-  }
-  .login1_container
-  {
-    background-image: url(../Assests/front.webp);
-    width: 99%;
-    background-repeat: no-repeat;
-    height:fit-content;
-    position: fixed;
-  }
-  span{
-    color: red;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    size: 20px;
-  }
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .button1 {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    border-radius: 50px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    margin-left: 90px;
-  }
-  
-  .button1:hover {
-    background-color: #479df8;
-  }
-  label
-  {
-    text-align: left;
-  }
-  .error {
-    color: red;
-    font-size: 0.875em;
-    margin-top: 5px;
-  }
-  .forgot-password {
-    text-align: right;
-    margin-top: 10px;
-  }
-  
-  .forgot-password a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .forgot-password a:hover 
-  {
-    text-decoration: underline;
-    color: red;
-  }
+/* src/components/login.css */
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .no-account {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .no-account a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .no-account a:hover 
-  {
-    text-decoration: underline;
-    color: red;
-  }
+.login-popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  position: relative;
+}
 
-  .app-logo
-  {
-    width: 50%;
-    height: 50%;
-    margin-left: 80px;
-  }
-  .footer-container
-  {
-    margin-left: -1050px;
-    width: 368%;
-  }
-  .footer {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 20px 0;
-    font-size: 14px;
-    margin-top: 145px;
-  }
-  
-  .footer .footer-links {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  
-  .footer .footer-links div {
-    flex: 1;
-    min-width: 150px;
-    margin: 10px;
-  }
-  
-  .footer .footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-    margin: 5px 0;
-  }
-  
-  .footer .footer-links a:hover {
-    text-decoration: none;
-  }
-  
-  .footer .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    border-top: 1px solid #ffffff;
-    padding-top: 10px;
-    margin-top: 20px;
-  }
-  
-  .footer .footer-bottom div {
-    flex: 1;
-    min-width: 150px;
-  }
-  
-  .footer .footer-bottom a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .footer .footer-bottom a:hover {
-    text-decoration: none;
-  }
-  
-  .footer .app-links img {
-    height: 30px;
-    margin: 0 5px;
-  }
-  
-  .footer .social-icons a {
-    color: #ffffff;
-    margin: 0 10px;
-  }
-  
-  .footer .social-icons a:hover {
-    color: #cccccc;
-  }
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.login-popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-popup label {
+  margin: 5px 0;
+}
+
+.login-popup input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-popup button {
+  padding: 10px;
+  background-color: #fbfdfe;
+  color: rgb(6, 6, 6);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
