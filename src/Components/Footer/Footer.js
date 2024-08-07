@@ -14,7 +14,7 @@ const Footer = () => {
           </div>
           <div>
             <button className="btn hireme-btn">
-              <NavLink to="/"><a href="tel:+123-456-7890" className="nav-contact"> Contact: +123-456-7890</a></NavLink>
+           <a href="tel:7598894445">Contact: +123-456-7890</a> 
             </button>
           </div>
         </div>
@@ -56,7 +56,11 @@ const Footer = () => {
           </div>
           <div className="footer-contact">
             <h3>Call Us</h3>
-            <h3>+91 7397206862</h3>
+            <div >
+      <a href="tel:+917598894445" >
+        Call Us: +1 (234) 567-890
+      </a>
+    </div>
           </div>
         </div>
         <div className="footer-bottom--section">

@@ -1,46 +1,3 @@
-// // src/components/Login.js
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';  // Import useNavigate
-// import './Login.css';
-// import OurLogo from '../Assests/LogoPic.png';
-
-// function Login({ isOpen, onClose }) {
-//   const navigate = useNavigate();  // Initialize useNavigate
-
-//   if (!isOpen) return null;
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();  // Prevent the default form submission
-    
-//     // Perform login logic here (validation, API calls, etc.)
-    
-//     // Redirect to home page after login
-//     navigate('/');
-//     onClose();  // Close the popup after successful login
-//   };
-
-//   return (
-//     <div className="login-popup">
-//       <div className="login-popup-content">
-//         <button className="close-button" onClick={onClose}>×</button>
-//         <img src={OurLogo} alt="Logo" style={{ marginLeft: '10px' }} />
-//         <h4 className='different' style={{ backgroundColor: "#fff", marginLeft: '130px' }}>Sign In</h4>
-//         <form onSubmit={handleSubmit}>
-//           <label htmlFor="email">Email</label>
-//           <input type="email" id="email" placeholder="email" />
-//           <label htmlFor="password">Password</label>
-//           <input type="password" id="password" placeholder="Password" />
-//           <button type="submit" style={{ backgroundColor: "#0056b3" }}>Login</button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Login;
-
-
-// src/components/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
@@ -52,6 +9,8 @@ function Login({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [message, setMessage] = useState('');  // State for success or error messages
+  const [isSuccess, setIsSuccess] = useState(false);  // State to check if login is successful
 
   if (!isOpen) return null;
 
@@ -71,7 +30,7 @@ function Login({ isOpen, onClose }) {
     return errors;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -79,19 +38,48 @@ function Login({ isOpen, onClose }) {
       return;
     }
 
-    // Perform login logic here (validation, API calls, etc.)
+    try {
+      const response = await fetch('http://localhost:9001/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
 
-    // Redirect to home page after login
-    navigate('/');
-    onClose();  // Close the popup after successful login
+      if (!response.ok) {
+        throw new Error('Invalid credentials');
+      }
+
+      setIsSuccess(true);
+      setMessage('Login successful');
+      setTimeout(() => {
+        navigate('/');  // Redirect to home page after login
+        onClose();  // Close the popup after login attempt
+      }, 2000);  // Close after 2 seconds
+    } catch (error) {
+      setIsSuccess(false);
+      setMessage('Invalid credentials');
+    }
   };
 
   return (
     <div className="login-popup">
       <div className="login-popup-content">
-        <button className="close-button" onClick={onClose}>×</button>
+        
+        <button className="close-button" onClick={onClose} style={{width:'10px', color:'black', marginRight:'20px', backgroundColor:'white' }}>×</button>
         <img src={OurLogo} alt="Logo" style={{ marginLeft: '10px' }} />
         <h4 className='different' style={{ backgroundColor: "#fff", marginLeft: '130px' }}>Sign In</h4>
+        
+        {message && (
+          <div className={`message ${isSuccess ? 'success' : 'error'}`}>
+            {isSuccess ? '✔️' : '❌'} {message}
+          </div>
+        )}
+        
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
           <input
@@ -121,4 +109,3 @@ function Login({ isOpen, onClose }) {
 }
 
 export default Login;
-

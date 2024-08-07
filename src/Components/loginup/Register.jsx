@@ -1,146 +1,3 @@
-// import React, { useState } from 'react';
-// import './Register.css';
-// import logo from '../Assests/Logo.png';
-// import { Link } from 'react-router-dom';
-
-// function Register() {
-//   const [fname, setFname] = useState('');
-//   const [lname, setLname] = useState('');
-//   const [phone, setPhone] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [emailError, setEmailError] = useState('');
-//   const [confirmPassword, setConfirmPassword] = useState('');
-//   const [error, setError] = useState('');
-//   const [policyAccepted, setPolicyAccepted] = useState(false);
-
-//   const handleEmailChange = (e) => {
-//     const { value } = e.target;
-//     setEmail(value);
-//     validateEmail(value);
-//   };
-
-//   const validateEmail = (email) => {
-//     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
-//     if (!regex.test(email)) {
-//       setEmailError('Email must be a valid address and end with .com or .in.');
-//     } else {
-//       setEmailError('');
-//     }
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (password !== confirmPassword) {
-//       setError('Passwords do not match');
-//       return;
-//     }
-//     if (!policyAccepted) {
-//       alert('You must accept the privacy policy');
-//       return;
-//     }
-//     // Handle form submission
-//     console.log('First-Name:', fname);
-//     console.log('Last-Name', lname);
-//     console.log('Phone-No:', phone);
-//     console.log('Email:', email);
-//     console.log('Password:', password);
-//     // Add your registration logic here
-//   };
-
-//   return (
-//     <div className='register'>
-//     <div className="register-container">
-//       <div>
-//         <img src={logo} className="eye-logo" alt="logo" />
-//         <h2>Welcome to Eye<span>+</span> </h2>
-//       </div>
-//       <h2>Create an Account</h2>
-//       <form onSubmit={handleSubmit}>
-//         {error && <p className="error">{error}</p>}
-//         <div className="form-group">
-//           <label>First Name<span>*</span></label>
-//           <input
-//             type="text"
-//             value={fname}
-//             onChange={(e) => setFname(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div className="form-group">
-//           <label>Last Name</label>
-//           <input
-//             type="text"
-//             value={lname}
-//             onChange={(e) => setLname(e.target.value)}
-//           />
-//         </div>
-//         <div className="form-group">
-//           <label>Phone No<span>*</span></label>
-//           <input
-//             type="tel"
-//             value={phone}
-//             onChange={(e) => setPhone(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div className='form-group'>
-//           <label>Email<span>*</span></label>
-//           <input
-//             type="email"
-//             value={email}
-//             onChange={handleEmailChange}
-//             required
-//           />
-//           {emailError && <p className="error">{emailError}</p>}
-//         </div>
-//         <div className="form-group">
-//           <label>Password<span>*</span></label>
-//           <input
-//             type="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div className="form-group">
-//           <label>Confirm Password<span>*</span></label>
-//           <input
-//             type="password"
-//             value={confirmPassword}
-//             onChange={(e) => setConfirmPassword(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div className="checkbox-group">
-//           <input
-//             type="checkbox"
-//             checked={policyAccepted}
-//             onChange={(e) => setPolicyAccepted(e.target.checked)}
-//             required
-//           />
-//           <label>
-//             I accept the <a href="/privacy-policy" target="_blank">Privacy Policy</a><span>*</span>
-//           </label>
-//         </div>
-//         <button type="submit" disabled={!policyAccepted || emailError || error} className='but'><Link to="/Home">Register</Link></button>
-//         <div className='have-account'>
-//           <p>Already have an account ? <Link to="/">SignIn</Link></p>
-//         </div>
-//       </form>
-
-      
-//     </div>
-//     </div>
-//   );
-// }
-
-// export default Register;
-// //Register.jsx
-
-
-
-// src/components/Register.js
 import React, { useState } from 'react';
 import './Register.css';
 import OurLogo from '../Assests/LogoPic.png';
@@ -152,6 +9,7 @@ function Register({ isOpen, onClose }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [phone, setPhone] = useState('');  // New state for phone
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -162,27 +20,51 @@ function Register({ isOpen, onClose }) {
     const errors = {};
     if (!username) errors.username = 'Username is required';
     if (!email) errors.email = 'Email is required';
+    if (!phone) errors.phone = 'Phone number is required';  // Validate phone
     if (!password) errors.password = 'Password is required';
     if (password.length < 6) errors.password = 'Password must be at least 6 characters';
     if (password !== confirmPassword) errors.confirmPassword = 'Passwords do not match';
     return errors;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    // Perform registration logic here
-    onClose();  // Close the popup after successful registration
+    
+    try {
+      const response = await fetch('http://localhost:9001/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+          phone  // Include phone in the request body
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('User registered successfully:', data);
+      onClose();  // Close the popup after successful registration
+    } catch (error) {
+      console.error('There was a problem with the registration:', error);
+    }
   };
 
   return (
     <div className="register-popup">
       <div className="register-popup-content">
-        <button className="close-button" onClick={onClose}>×</button>
+        <button className="close-button" onClick={onClose}style={{width:'10px', color:'black', marginRight:'20px', backgroundColor:'white' }}>×</button>
         <img src={OurLogo} alt="Logo" style={{ marginLeft: '100px', height:'100px'}} />
         <h4 className='different' style={{ backgroundColor: "#fff", marginLeft: '130px' }}>Sign Up</h4>
         <form onSubmit={handleSubmit}>
@@ -205,6 +87,16 @@ function Register({ isOpen, onClose }) {
             onChange={(e) => setEmail(e.target.value)}
           />
           {errors.email && <div className="error">{errors.email}</div>}
+
+          <label htmlFor="phone">Phone Number</label>
+          <input
+            type="text"
+            id="phone"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          {errors.phone && <div className="error">{errors.phone}</div>}
 
           <label htmlFor="password">Password</label>
           <div className="password-container">
@@ -250,4 +142,3 @@ function Register({ isOpen, onClose }) {
 }
 
 export default Register;
-

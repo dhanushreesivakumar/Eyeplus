@@ -1,152 +1,117 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .container {
-    display: flex;
-  }
-  
-  .filter-section {
-    width: 250px;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-right: 1px solid #ddd;
-    height: 100vh;
-    overflow-y: auto;
-    position: fixed; 
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin-top: 100px;
-  }
-  
-  .filter-section label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .filter-section select, .filter-section input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .product-section {
-    margin-left: 270px; 
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 100px;
-   
-  }
-  
-  .product-card {
-    width: calc(25% - 20px);
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-   
-  }
-  
-  .product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
-  }
-  
-  .product-card h3 {
-    font-size: 1.1em;
-    margin: 10px 0;
-  }
-  
-  .product-card p {
-    margin: 5px 0;
-  }
-  
-  .product-card .price {
-    font-weight: bold;
-    color: #333;
-    font-size: 1.1em;
-  }
-  
-  .product-card button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .product-card button:hover {
-    background-color: #0056b3;
-  }
-
-  .favorited {
-    color: red;
-  }
-  
-  .not-favorited {
-    color: white;
-    border: 2px solid black;
-    border-radius: 100%;
-  }
-
-
-
-
-
-  /* General styles for the product cards */
-.product-card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 10px;
-  width: 220px;
-  background-color: #fff;
-  text-align: center;
-  transition: transform 0.2s;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.product-card:hover {
-  transform: translateY(-10px);
+.container {
+  display: flex;
+  margin-top: 100px; /* Adjust if needed */
+}
+
+.filter-section {
+  width: 250px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed; 
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.filter-section select,
+.filter-section input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.product-section {
+  margin-left: 270px; /* Ensure this is more than the filter-section width */
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 100px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .product-card img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 8px 8px 0 0;
 }
 
 .product-card h3 {
-  font-size: 18px;
+  font-size: 1.1em;
   margin: 10px 0;
 }
 
 .product-card p {
-  font-size: 14px;
-  color: #555;
+  margin: 5px 0;
 }
 
 .product-card .price {
-  font-size: 16px;
   font-weight: bold;
   color: #333;
-  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+.product-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}
+
+.favorited {
+  color: red;
+}
+
+.not-favorited {
+  color: white;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+/* Additional styles for general product card layout */
+.product-card {
+  transition: transform 0.2s;
+ 
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
 }
 
 .product-card .favorite-icon {
@@ -160,20 +125,6 @@ body {
 
 .product-card .favorite-icon .fa-heart.not-favorited {
   color: #ccc;
-}
-
-.product-card button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.product-card button:hover {
-  background-color: #0056b3;
 }
 
 .product-card a {

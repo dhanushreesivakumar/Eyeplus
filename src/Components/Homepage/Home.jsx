@@ -10,6 +10,7 @@ import Premiunmwear from './Premiumwear'
 import Glam from './Glamlenses'
 import Ourbrand from './OurBrands'
 import Footer from '../Footer/Footer'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
      <h3>FREE ONLINE EYE TEST</h3>
      </div>
      <div>
-      <OnlineEyetest></OnlineEyetest>
+      <Link to="/Service"><OnlineEyetest></OnlineEyetest></Link>
      </div>
      <div className='eyetest'>
      <h3>

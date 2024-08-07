@@ -1,0 +1,32 @@
+/* Enquiries.css */
+
+.enquiries-page {
+    padding: 20px;
+  }
+  
+  .enquiries-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .enquiries-table th, .enquiries-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .enquiries-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .enquiry-form {
+    margin-top: 20px;
+  }
+  
+  .enquiry-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .enquiry-form .form-group {
+    margin-bottom: 15px;
+  }

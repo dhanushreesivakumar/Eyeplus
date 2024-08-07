@@ -16,8 +16,21 @@ import FilterComponent from './Components/ProductPage/FilterComponent';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer/Footer';
 import AboutUs from './Components/AboutUs/AboutUs';
-import EyeIn from './Components/Homepage/EyeIn';
 import Login from './Components/loginup/Login';
+import Service from './Components/Services/Service';
+import DashboardPage from './Components/Admin/DashboardPage';
+import Enquiries from './Components/Admin/Enquiries';
+import AddProductPage from './Components/Admin/AddProductsPage';
+import Payments from './Components/Admin/Payments';
+import DetailForm from './Components/Services/DetailForm';
+import Instruction from './Components/Services/Instruction';
+import EyeTestForm from './Components/Services/EyeTestForm';
+import CameraComponent from './Components/Services/CameraComponent';
+import SecondTest from './Components/Services/SecondTest';
+import DoctorAppointment from './Components/Services/DoctorAppointment';
+import EyeShopLocator from './Components/Services/MapComponent';
+import CombinedComponent from './Components/ProductPage/CombinedComponent';
+import AddtoCart from './Components/ProductPage/AddtoCart';
 
 
 function App() {
@@ -27,13 +40,23 @@ function App() {
      
      <BrowserRouter>
     <Routes>
-     <Route path="/" element={<Home/>}/>
+     <Route path="/" element={<Home></Home>}/>
+     <Route path="/doctorappointment" element={<DoctorAppointment></DoctorAppointment>}/>
      <Route path="/Login" element={<Login/>}/>
- 
-    <Route path="/register" element={<Register />} /> 
-    <Route path="/Contact" element={<Contact/>}/>  
-      <Route path="/Product" element={<MainComponent/>}/>  
+     <Route path="/Service" element={<Service></Service>}/>  
+     <Route path="/productpage" element={<CombinedComponent></CombinedComponent>}/>
+     <Route path="/addtocart" element={<AddtoCart></AddtoCart>}/>  
+     <Route path="/register" element={<Register />} /> 
+    <Route path="/Contact" element={<Contact></Contact>}/>  
       <Route path="/Aboutus" element={<AboutUs></AboutUs>}/> 
+      <Route path="/detail-form" element={<DetailForm></DetailForm>}/>
+      <Route path="/Dashboard" element={<DashboardPage />} />
+      <Route path="/enquiries" element={<Enquiries />} />
+      <Route path="/add-products" element={<AddProductPage />} />
+      <Route path="/payments" element={<Payments />} />
+      <Route path="/instruct" element={<Instruction></Instruction>} />
+      <Route path="/eyetestform" element={<EyeTestForm></EyeTestForm>} />
+      <Route path="/CameraComponent" element={<CameraComponent></CameraComponent>} />    
     </Routes>
      </BrowserRouter> 
 

@@ -14,9 +14,9 @@ const FilterComponent = ({ filters, setFilters }) => {
         Brand:
         <select name="brand" onChange={handleFilterChange} value={filters.brand}>
           <option value="">All</option>
-          <option value="BrandA">BrandA</option>
-          <option value="BrandB">BrandB</option>
-          <option value="BrandC">BrandC</option>
+          <option value="Fastrack">Fastrack</option>
+          <option value="Ray-Ban">Ray-Ban</option>
+          <option value="Vogue">Vogue</option>
         </select>
       </label>
       <label>
