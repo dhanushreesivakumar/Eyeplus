@@ -1,0 +1,81 @@
+.address-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #528ddc;
+    color: white;
+  }
+  
+  .address-logo {
+    height: 50px;
+  }
+  
+  .phone-number {
+    color: white;
+  }
+  
+  .address-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .address-form-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .address-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .address-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .address-option input {
+    margin-right: 15px;
+  }
+  
+  .add-new-address {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .add-new-address button {
+    margin-right: 10px;
+  }
+  
+  .submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #002D72;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0046a2;
+  }

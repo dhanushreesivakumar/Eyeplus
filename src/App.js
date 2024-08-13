@@ -31,6 +31,15 @@ import DoctorAppointment from './Components/Services/DoctorAppointment';
 import EyeShopLocator from './Components/Services/MapComponent';
 import CombinedComponent from './Components/ProductPage/CombinedComponent';
 import AddtoCart from './Components/ProductPage/AddtoCart';
+import HomeService from './Components/HomeService/HomeService';
+import EyeTestLogin from './Components/HomeService/EyeTestLogin';
+import AddressSelection from './Components/HomeService/AddressSelection';
+import Wholepage from './Components/Homepage/Wholepage';
+import BookingAddress from './Components/ProductPage/BookingAdddress';
+import EndPayment from './Components/ProductPage/EndPayment';
+import CategoryList from './Components/Homepage/CategoryList';
+import Review from './Components/Review';
+
 
 
 function App() {
@@ -40,13 +49,20 @@ function App() {
      
      <BrowserRouter>
     <Routes>
-     <Route path="/" element={<Home></Home>}/>
+    <Route path="/" element={<Wholepage></Wholepage>}/>
+    <Route path="/review" element={<Review></Review>}/>
+    <Route path="/categorylist" element={<CategoryList></CategoryList>}/>
+    <Route path="/bookingaddress" element={<BookingAddress></BookingAddress>}/>
+    <Route path="/endpayment" element={<EndPayment></EndPayment>}/>
+     <Route path="/addselection" element={<AddressSelection></AddressSelection>}/>
+     <Route path="/eyetestlogin" element={<EyeTestLogin></EyeTestLogin>}/>
+     <Route path="/homeservice" element={<HomeService/>}/>
      <Route path="/doctorappointment" element={<DoctorAppointment></DoctorAppointment>}/>
      <Route path="/Login" element={<Login/>}/>
      <Route path="/Service" element={<Service></Service>}/>  
      <Route path="/productpage" element={<CombinedComponent></CombinedComponent>}/>
      <Route path="/addtocart" element={<AddtoCart></AddtoCart>}/>  
-     <Route path="/register" element={<Register />} /> 
+     <Route path="/register" element={<Register></Register>} /> 
     <Route path="/Contact" element={<Contact></Contact>}/>  
       <Route path="/Aboutus" element={<AboutUs></AboutUs>}/> 
       <Route path="/detail-form" element={<DetailForm></DetailForm>}/>

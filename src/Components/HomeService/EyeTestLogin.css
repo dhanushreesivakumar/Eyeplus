@@ -1,0 +1,96 @@
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+} */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #528ddc;
+    padding: 10px 20px;
+    color: white;
+}
+
+.login-logo {
+    height: 40px;
+}
+
+.phone-number {
+    font-size: 1.2em;
+}
+
+.login-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-form-container {
+    background: white;
+    padding: 40px 60px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 40px  rgba(1, 4, 95, 0.1);
+    width: 100%;
+    width: 500px;
+    height: 350px;
+
+}
+
+.login-form-container h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #001f3f;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.login-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+.submit-button {
+    background-color: #528ddc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.submit-button:hover {
+    background-color: #001f3f;
+}

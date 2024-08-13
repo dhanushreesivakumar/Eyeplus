@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import styled, { ThemeProvider } from 'styled-components';
 import Navbar from './Navbar/navbar';
@@ -47,31 +47,51 @@ const Wrapper = styled.section`
 
 const Contact = () => {
   const { isAuthenticated, user } = useAuth0();
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      setUsername(user.name);
+      setEmail(user.email);
+    }
+  }, [isAuthenticated, user]);
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
 
   return (
     <ThemeProvider theme={theme}>
-        <Navbar></Navbar>
-      <Wrapper style={{marginTop:'-145px'}}>
+      <Navbar />
+      <Wrapper style={{ marginTop: '-145px' }}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3512.9774605186335!2d77.29678141435814!3d28.299006905849843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc0b01f0f019%3A0x93e4211b9a200ed0!2sAlchem%20International%20Private%20Limited!5e0!3m2!1sen!2sin!4v1664815246439!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0076858199666!2d76.93791411533153!3d10.934472292213707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8572eb6dc1475%3A0x4a1ef38e4db1b79f!2sKovaipudur%2C%20Tamil%20Nadu%20641120!5e0!3m2!1sen!2sin!4v1664815246439!5m2!1sen!2sin"
           width="100%"
           height="400"
-          style={{ border: 0}}
+          style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"></iframe>
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
 
         <div className="container">
           <div className="contact-form">
             <form
               action="https://formspree.io/f/xdojzzlj"
               method="POST"
-              className="contact-inputs">
+              className="contact-inputs"
+            >
               <input
                 type="text"
-                placeholder="username"
+                placeholder="Username"
                 name="username"
-                value={isAuthenticated ? user.name : ""}
+                value={username}
+                onChange={handleUsernameChange}
                 required
                 autoComplete="off"
               />
@@ -80,8 +100,9 @@ const Contact = () => {
                 type="email"
                 name="Email"
                 placeholder="Email"
+                value={email}
+                onChange={handleEmailChange}
                 autoComplete="off"
-                value={isAuthenticated ? user.email : ""}
                 required
               />
 
@@ -91,9 +112,10 @@ const Contact = () => {
                 rows="10"
                 required
                 autoComplete="off"
-                placeholder="Enter your message"></textarea>
+                placeholder="Enter your message"
+              ></textarea>
 
-              <input type="submit" value="send" />
+              <input type="submit" value="Send" />
             </form>
           </div>
         </div>

@@ -10,22 +10,22 @@ const Options = () => {
       <nav className="nav">
         <ul className="nav-links">
           <li className="nav-item">
-            <Link to="/Product" className="nav-link">Sunglasses</Link>
+            <Link to="/productpage" className="nav-link">Sunglasses</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Product" className="nav-link">Eyeglasses</Link>
+            <Link to="/productpage" className="nav-link">Eyeglasses</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Product" className="nav-link">Kids Glasses</Link>
+            <Link to="/productpage" className="nav-link">Kids Glasses</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Product" className="nav-link">Contact Lens</Link>
+            <Link to="/productpage" className="nav-link">Contact Lens</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Product" className="nav-link">Store Locator</Link>
+            <Link to="/productpage" className="nav-link">Store Locator</Link>
           </li>
           <li className="nav-item">
-            <Link to="/Product" className="nav-link">Bride to be Glasses</Link>
+            <Link to="/productpage" className="nav-link">Bride to be Glasses</Link>
           </li>
         </ul>
       </nav>

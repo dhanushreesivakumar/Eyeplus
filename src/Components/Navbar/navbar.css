@@ -1,8 +1,9 @@
+/* Navbar container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px 20px;
   background-color: #528ddc;
   position: fixed;
   top: 0;
@@ -11,24 +12,24 @@
   z-index: 1000;
   box-sizing: border-box;
   overflow-x: auto;
+  height: 100px;
+ 
 }
 
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
-
+/* Logo styling */
 .logo-img {
   height: 80px;
   width: 140px;
 }
 
+/* Center section for search */
 .navbar-center {
   flex-grow: 1;
   display: flex;
   justify-content: center;
 }
 
+/* Search box styling */
 .search-container {
   position: relative;
   width: 300px;
@@ -50,12 +51,14 @@
   color: #050506;
 }
 
+/* Navbar right section */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 20px; /* Added gap for spacing */
+  gap: 60px; /* Added gap for spacing */
 }
 
+/* Navigation link styling */
 .nav-link {
   display: flex;
   align-items: center;
@@ -75,10 +78,35 @@
   color: rgb(15, 15, 15);
 }
 
-.nav-icon {
-  margin-right: 5px;
+/* User menu styling */
+.user-menu {
+  position: relative; /* Ensure dropdown is positioned relative to this element */
 }
 
-.nav-text {
-  display: inline;
+.dropdown-menu {
+  position:sticky;
+  top: 100%; /* Position below the user menu */
+  right: 0; /* Align to the right edge of the user menu */
+  background-color: white;
+  color: black;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow:inherit;
+  min-width: 150px;
+  display: none; /* Default to hidden */
+  z-index: 2000; /* Higher z-index to be on top of other elements */
+  border-color: black;
+}
+
+.user-menu:hover .dropdown-menu {
+  display:flex; /* Show dropdown on hover */
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
 }

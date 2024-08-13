@@ -11,25 +11,38 @@ import Glam from './Glamlenses'
 import Ourbrand from './OurBrands'
 import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
+import CategoryList from './CategoryList'
+import TrendingCategories from './TrendingCategories'
+import Chatbot from './Chatbot'
 
 export default function Home() {
   return (
     <div>
       
-      <Navbar></Navbar><br></br><br></br>
-     <ImageCarousel></ImageCarousel>
+      <br></br>
+     <br></br>
+      <br></br>
+      <CategoryList></CategoryList>
+     <ImageCarousel ></ImageCarousel>
      <Options></Options>
      <div className='eyetest'>
-     <h3>EYE TEST AT HOME</h3>
-    
+      <h3>EYE TEST AT HOME</h3>
      </div>
-     <Eyetest></Eyetest>
+     <Link to="/homeservice"><Eyetest></Eyetest></Link>
+
+
+
+
      <div className='eyetest'>
      <h3>FREE ONLINE EYE TEST</h3>
      </div>
      <div>
       <Link to="/Service"><OnlineEyetest></OnlineEyetest></Link>
      </div>
+     <TrendingCategories></TrendingCategories>
+
+
+
      <div className='eyetest'>
      <h3>
       PREMIUM EYEWEAR</h3>
@@ -50,6 +63,7 @@ export default function Home() {
      <div>
     <Footer></Footer>
     </div>
+    <Chatbot ></Chatbot>
       </div>
       
     

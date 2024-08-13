@@ -1,0 +1,54 @@
+/* Payment.css */
+
+/* Container for the payment section */
+.container-ii {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);  /* Adds a semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Heading for the payment section */
+  .container-ii h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Button styles */
+  .container-ii button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #4084e4;  /* Matches the Razorpay theme color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container-ii button:hover {
+    background-color: #3b65ed;
+  }
+  
+  /* Navbar styling */
+  
+  
+  /* Background styling (if needed for the whole page) */
+  /* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  } */
+  
+  /* Ensures full-screen coverage and proper centering */
+  #root, html, body {
+    height: 100%;
+  }
+  
